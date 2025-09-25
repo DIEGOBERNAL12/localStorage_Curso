@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1</title>
+</head>
+
+<style>
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        scrollbar-width: none;
+    }
+
+    /* Fondo */
+    body {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        min-height: 100vh;
+    }
+</style>
+
+<body>
+    <h1>Gestion de Cursos</h1>
+        <form id="formulario">
+            <input type="text" placeholder="Nombre del Curso" id="curso">
+            <input type="text" placeholder="Profesor" id="profesor">
+            <input type="text" placeholder="Precio" id="precio">
+            <input type="text" placeholder="Ciudad" id="ciudad">
+            <input type="text" placeholder="Cupo" id="cupo">
+            <button type="submit">Guardar</button>
+        </form>
+
+        <h2 id="mensajeCurso">Aqui se mostrara el curso creado</h2>
+
+        <button id="delete"> Borrar Curso</button>
+        <br>
+        <a href="cursos.html">Ver Cursos</a>
+
+        <script src="main.js"></script>
+</body>
+
+</html>
