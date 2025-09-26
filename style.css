@@ -108,3 +108,33 @@ a {
 a:hover {
     color: #f39c12;
 }
+
+table{
+    background: rgba(255,255,255,0.1);
+    color: #ecf0f1;
+    margin: 0 auto;
+    width: 70%;
+    padding: 20px 10px;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    border-radius: 20px;
+}
+
+table tbody{
+    background: #0080ff;
+}
+
+table thead{
+    background: #00c753;
+}
+
+table thead  td{
+    padding: 10px;
+}
+
+table tbody tr td{
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px ;
+    color: black;
+}

@@ -33,6 +33,7 @@ formulario.addEventListener('submit', (e) => {
     //un objeto que tiene diferentes caracteristicas
     localStorage.setItem("curso", JSON.stringify(nuevoCurso));
     formulario.reset();
+    //////////////////////////////////////////
     const cursoCreado = localStorage.getItem("curso");
         const objetoCurso = JSON.parse(cursoCreado);
 

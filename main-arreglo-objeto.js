@@ -29,10 +29,28 @@ formulario.addEventListener('submit', (e) => {
         ciudad : ciudad,
         cupo : cupo
     };
+
+    //Capturamos el arreglo existente en ellocalStorage o lo creamos vacio si no existe previamente
+    const cursosGuardados = JSON.parse(localStorage.getItem("cursos")) || [];
+    //Agregamos al areglo cursosGuardados el nuevo curso [] el curso 
+    cursosGuardados.push(nuevoCurso)
+
     //Anteriormente era un solo valor ahora se esta alimentando 
     //un objeto que tiene diferentes caracteristicas
-    localStorage.setItem("curso", JSON.stringify(nuevoCurso));
+    //Le envia el item a localStorage y lo convierte en string
+    localStorage.setItem("cursos", JSON.stringify(cursosGuardados));
     formulario.reset();
+    /////////////////////////////////////
+    const cursoCreado = localStorage.getItem("cursos");
+        const objetoCurso = JSON.parse(cursoCreado);
+
+        mensaje.innerHTML = 
+        " Curso:" + objetoCurso.nombre + "<br>" +
+        " Profesor: " + objetoCurso.profesor + "<br>" +
+        " Precio: " + objetoCurso.precio + "<br>" +
+        " Ciudad: " + objetoCurso.ciudad + "<br>" +
+        " Cupo: " + objetoCurso.cupo;
+
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const objetoCurso = JSON.parse(cursoCreado);
         //el JSON.parse se usa para convertir
 
-        
-
         mensaje.innerHTML = 
         " Curso:" + objetoCurso.nombre + "<br>" +
         " Profesor: " + objetoCurso.profesor + "<br>" +
@@ -50,4 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         " Ciudad: " + objetoCurso.ciudad + "<br>" +
         " Cupo: " + objetoCurso.cupo;
     }
-})
+});
+
+btnEliminar.addEventListener('click', () => {
+    localStorage.removeItem("cursos")
+
+    mensaje.textContent = "No Hay Cursos"
+});
